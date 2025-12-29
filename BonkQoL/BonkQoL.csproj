@@ -1,10 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <AssemblyName>BepInEx6.PluginTemplate.Unity.Il2Cpp</AssemblyName>
+	  <TargetFramework>net6.0</TargetFramework>
+		<ProjectName>BonkQoL</ProjectName>
+	  <AssemblyName>BonkQoL</AssemblyName>
     <Product>BonkQoL</Product>
-    <Version>{version}</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <RestoreAdditionalProjectSources>
@@ -12,11 +12,24 @@
       https://nuget.bepinex.dev/v3/index.json;
       https://nuget.samboy.dev/v3/index.json
     </RestoreAdditionalProjectSources>
-    <RootNamespace>BepInEx6.PluginTemplate.Unity.Il2Cpp</RootNamespace>
+
+		<BepInEx>F:\Games\Mods\GaleModManager\megabonk\profiles\Default\BepInEx</BepInEx>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.*" IncludeAssets="compile" />
-    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.*" IncludeAssets="compile" />
+		<PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+
+		<Reference Include="Assembly-CSharp">
+			<HintPath>$(BepInEx)\interop\Assembly-CSharp.dll</HintPath>
+		</Reference>
+
+		<Reference Include="UnityEngine.CoreModule">
+			<HintPath>$(BepInEx)\interop\UnityEngine.CoreModule.dll</HintPath>
+		</Reference>
+
+		<Reference Include="Il2Cppmscorlib">
+			<HintPath>$(BepInEx)\interop\Il2Cppmscorlib.dll</HintPath>
+		</Reference>
+	</ItemGroup>
 </Project>
