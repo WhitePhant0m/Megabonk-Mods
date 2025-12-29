@@ -22,11 +22,12 @@ public class Plugin : BasePlugin
     }
 
     [HarmonyPatch(typeof(PickupManager), nameof(PickupManager.SpawnPickup))]
-    public class PickupPatch
+    internal class PickupPatch
     {
-        public static void PostFix(EPickup pickup, PickupManager __instance, ref Pickup __result)
+        [HarmonyPostfix]
+        public static void InstantPickup(EPickup ePickup, PickupManager __instance, ref Pickup __result)
         {
-            if (__result != null && pickup == EPickup.Xp) __result.ApplyPickup();
+            if (__result != null && ePickup == EPickup.Xp) __result.ApplyPickup();
         }
     }
 }
