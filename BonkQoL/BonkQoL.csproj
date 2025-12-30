@@ -22,14 +22,17 @@
 
 		<Reference Include="Assembly-CSharp">
 			<HintPath>$(BepInEx)\interop\Assembly-CSharp.dll</HintPath>
+			<Private>false</Private>
 		</Reference>
 
 		<Reference Include="UnityEngine.CoreModule">
 			<HintPath>$(BepInEx)\interop\UnityEngine.CoreModule.dll</HintPath>
+			<Private>false</Private>
 		</Reference>
 
 		<Reference Include="Il2Cppmscorlib">
 			<HintPath>$(BepInEx)\interop\Il2Cppmscorlib.dll</HintPath>
+			<Private>false</Private>
 		</Reference>
 	</ItemGroup>
 </Project>
